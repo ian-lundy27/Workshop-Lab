@@ -39,7 +39,14 @@ public class Main {
 
         System.out.println(wordMap.toString());
 
+        LinkedList<String> sortedWordCount = new LinkedList<>(wordMap.keySet());
+        sortedWordCount.sort((o1,o2) -> wordMap.get(o2).compareTo(wordMap.get(o1)));
 
+        System.out.println(sortedWordCount);
+        System.out.println(sortedWordCount.getFirst());
+        System.out.println(wordMap.get(sortedWordCount.getFirst()));
+        System.out.println(sortedWordCount.getLast());
+        System.out.println(wordMap.get(sortedWordCount.getLast()));
 
     }
 
