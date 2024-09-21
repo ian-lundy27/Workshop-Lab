@@ -5,6 +5,25 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+
+        //  testing article class to make sure stuff works
+        Article stop = new Article("media/project-information.txt");
+        System.out.println(stop.rawContent);
+        System.out.println(stop.parsedContent);
+        System.out.println(Arrays.toString(stop.wordList));
+        System.out.println(stop.wordFrequency.toString());
+        System.out.println(stop.wordFrequencyList.toString());
+        System.out.println(stop.getNumStatements());
+        for (int i = 0; i < stop.wordFrequencyList.toArray().length; i++) {
+
+            System.out.println(stop.wordFrequency.get(stop.wordFrequencyList.get(i)) + "\t" + stop.wordFrequencyList.get(i));
+
+        }
+
+        System.exit(0);
+
+
+
         File file = new File("media/project-information.txt");
 
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -25,7 +44,7 @@ public class Main {
         System.out.println(wordList.length);
         System.out.println(Arrays.toString(wordList));
 
-        HashMap<String,Integer> wordMap = new HashMap<String,Integer>();
+        HashMap<String,Integer> wordMap = new HashMap<>();
 
         for (String word : wordList) {
 
