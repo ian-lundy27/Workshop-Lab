@@ -3,14 +3,10 @@ import java.util.*;
 
 public class Main {
 
-
-
-
     public static void main(String[] args) throws Exception {
 
-
         //  testing article class to make sure stuff works
-        Article stop = new Article("Article1.txt");
+        Article stop = new Article("library/nuclear-power/Article1.txt");
         //Article 1: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
         System.out.println(stop.rawContent);
         System.out.println(stop.parsedContent);
