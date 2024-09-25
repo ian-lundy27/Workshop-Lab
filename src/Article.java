@@ -98,4 +98,28 @@ public class Article {
 
     }
 
+    public ArrayList<String> removeStopWords() throws IOException {
+
+        ArrayList<String> condensedWordList = new ArrayList<>();
+
+        condensedWordList.addAll(Arrays.asList(wordList));
+
+        Article stopWords = new Article("stopwords.txt");
+        stopWords.parseContent();
+        stopWords.buildWordList();
+
+        for(int i = 0;i < stopWords.wordList.length;i++) {
+
+            for(int j = 0;j < condensedWordList.size();j++) {
+
+                if (stopWords.wordList[i].equals(condensedWordList.get(j))) {
+
+                    condensedWordList.remove(j);
+                    j--;
+                }
+            }
+        }
+
+        return condensedWordList;
+    }
 }
