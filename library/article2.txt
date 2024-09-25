@@ -1,0 +1,86 @@
+7 reasons why nuclear energy is not the answer to solve climate change
+False Solutions
+Mark Z. Jacobson
+Mark Z. Jacobson
+Professor of Civil and Environmental Engineering & Director of the Atmosphere/Energy Program, Stanford University
+There is a small group of scientists that have proposed replacing 100% of the world’s fossil fuel power plants with nuclear reactors as a way to solve climate change. Many others propose nuclear grow to satisfy up to 20 percent of all our energy (not just electricity) needs. They advocate that nuclear is a “clean” carbon-free source of power, but they don’t look at the human impacts of these scenarios. Let’s do the math...
+
+One nuclear power plant takes on average about 14-1/2 years to build, from the planning phase all the way to operation. According to the World Health Organization, about 7.1 million people die from air pollution each year, with more than 90 percent of these deaths from energy-related combustion. So switching out our energy system to nuclear would result in about 93 million people dying, as we wait for all the new nuclear plants to be built in the all-nuclear scenario.
+
+Utility-scale wind and solar farms, on the other hand, take on average only two to five years, from the planning phase to operation. Rooftop solar PV projects are down to only a 6-month timeline. So transitioning to 100% renewables as soon as possible would result in tens of millions fewer deaths.
+
+This illustrates a major problem with nuclear power and why renewable energy -- in particular Wind, Water, and Solar (WWS) -- avoids this problem. Nuclear, though, doesn’t just have one problem. It has seven. Here are the seven major problems with nuclear energy:
+
+
+Cofrentes Nuclear Power Plant located about 2 kilometers southeast of Cofrentes, Spain
+
+1. Long Time Lag Between Planning and Operation
+The time lag between planning and operation of a nuclear reactor includes the times to identify a site, obtain a site permit, purchase or lease the land, obtain a construction permit, obtain financing and insurance for construction, install transmission, negotiate a power purchase agreement, obtain permits, build the plant, connect it to transmission, and obtain a final operating license.
+
+The planning-to-operation (PTO) times of all nuclear plants ever built have been 10-19 years or more. For example, the Olkiluoto 3 reactor in Finland was proposed to the Finnish cabinet in December 2000 to be added to an existing nuclear power plant. Its latest estimated completion date is 2020, giving it a PTO time of 20 years.
+
+The Hinkley Point nuclear plant was planned to start in 2008. It has an estimated the completion year of 2025 to 2027, giving it a PTO time of 17 to 19 years. The Vogtle 3 and 4 reactors in Georgia were first proposed in August 2006 to be added to an existing site. The anticipated completion dates are November 2021 and November 2022, respectively, given them PTO times of 15 and 16 years, respectively.
+
+The Haiyang 1 and 2 reactors in China were planned to start in 2005. Haiyang 1 began commercial operation on October 22, 2018. Haiyang 2 began operation on January 9, 2019, giving them PTO times of 13 and 14 years, respectively. The Taishan 1 and 2 reactors in China were bid in 2006. Taishan 1 began commercial operation on December 13, 2018. Taishan 2 is not expected to be connected until 2019, giving them PTO times of 12 and 13 years, respectively. Planning and procurement for four reactors in Ringhals, Sweden started in 1965. One took 10 years, the second took 11 years, the third took 16 years, and the fourth took 18 years to complete.
+
+Many claim that France’s 1974 Messmer plan resulted in the building of its 58 reactors in 15 years. This is not true. The planning for several of these nuclear reactors began long before. For example, the Fessenheim reactor obtained its construction permit in 1967 and was planned starting years before. In addition, 10 of the reactors were completed between 1991-2000. As such, the whole planning-to-operation time for these reactors was at least 32 years, not 15. That of any individual reactor was 10 to 19 years.
+
+
+Radiation hotspot in Kashiwa, Japan
+
+2. Cost
+The levelized cost of energy (LCOE) for a new nuclear plant in 2018, based on Lazard, is $151 (112 to 189)/MWh. This compares with $43 (29 to 56)/MWh for onshore wind and $41 (36 to 46)/MWh for utility-scale solar PV from the same source.
+
+This nuclear LCOE is an underestimate for several reasons. First, Lazard assumes a construction time for nuclear of 5.75 years. However, the Vogtle 3 and 4 reactors, though will take at least 8.5 to 9 years to finish construction. This additional delay alone results in an estimated LCOE for nuclear of about $172 (128 to 215)/MWh, or a cost 2.3 to 7.4 times that of an onshore wind farm (or utility PV farm).
+
+Next, the LCOE does not include the cost of the major nuclear meltdowns in history. For example, the estimated cost to clean up the damage from three Fukushima Dai-ichi nuclear reactor core meltdowns was $460 to $640 billion. This is $1.2 billion, or 10 to 18.5 percent of the capital cost, of every nuclear reactor worldwide.
+
+In addition, the LCOE does not include the cost of storing nuclear waste for hundreds of thousands of years. In the U.S. alone, about $500 million is spent yearly to safeguard nuclear waste from about 100 civilian nuclear energy plants. This amount will only increase as waste continues to accumulate. After the plants retire, the spending must continue for hundreds of thousands of years with no revenue stream from electricity sales to pay for the storage.
+
+
+3. Weapons Proliferation Risk
+The growth of nuclear energy has historically increased the ability of nations to obtain or harvest plutonium or enrich uranium to manufacture nuclear weapons. The Intergovernmental Panel on Climate Change (IPCC) recognizes this fact. They concluded in the Executive Summary of their 2014 report on energy, with “robust evidence and high agreement” that nuclear weapons proliferation concern is a barrier and risk to the increasing development of nuclear energy:
+
+Barriers to and risks associated with an increasing use of nuclear energy include operational risks and the associated safety concerns, uranium mining risks, financial and regulatory risks, unresolved waste management issues, nuclear weapons proliferation concerns, and adverse public opinion.
+The building of a nuclear reactor for energy in a country that does not currently have a reactor allows the country to import uranium for use in the nuclear energy facility. If the country so chooses, it can secretly enrich the uranium to create weapons-grade uranium and harvest plutonium from uranium fuel rods for use in nuclear weapons. This does not mean any or every country will do this, but historically some have and the risk is high, as noted by IPCC. The building and spreading of Small Modular Reactors (SMRs) may increase this risk further.
+
+
+Image credit: Felix Chinog, Creative Commons
+
+4. Meltdown Risk
+To date, 1.5 percent of all nuclear power plants ever built have melted down to some degree. Meltdowns have been either catastrophic (Chernobyl, Russia in 1986; three reactors at Fukushima Dai-ichi, Japan in 2011) or damaging (Three-Mile Island, Pennsylvania in 1979; Saint-Laurent France in 1980). The nuclear industry has proposed new reactor designs that they suggest are safer. However, these designs are generally untested, and there is no guarantee that the reactors will be designed, built, and operated correctly or that a natural disaster or act of terrorism, such as an airplane flown into a reactor, will not cause the reactor to fail, resulting in a major disaster.
+
+
+The Chernobyl Nuclear Power Plant sarcophagus or Shelter Structure. Image credit: Carl Montgomery, Creative Commons
+
+5. Mining Lung Cancer Risk
+Uranium mining causes lung cancer in large numbers of miners because uranium mines contain natural radon gas, some of whose decay products are carcinogenic. A study of 4,000 uranium miners between 1950 and 2000 found that 405 (10 percent) died of lung cancer, a rate six times that expected based on smoking rates alone. 61 others died of mining-related lung diseases. Clean, renewable energy does not have this risk because (a) it does not require the continuous mining of any material, only one-time mining to produce the energy generators; and (b) the mining does not carry the same lung cancer risk that uranium mining does.
+
+
+Old derelict uranium quarry in Russia
+
+6. Carbon-Equivalent Emissions and Air Pollution
+There is no such thing as a zero- or close-to-zero emission nuclear power plant. Even existing plants emit due to the continuous mining and refining of uranium needed for the plant. Emissions from new nuclear are 78 to 178 g-CO2/kWh, not close to 0. Of this, 64 to 102 g-CO2/kWh over 100 years are emissions from the background grid while consumers wait 10 to 19 years for nuclear to come online or be refurbished, relative to 2 to 5 years for wind or solar. In addition, all nuclear plants emit 4.4 g-CO2e/kWh from the water vapor and heat they release. This contrasts with solar panels and wind turbines, which reduce heat or water vapor fluxes to the air by about 2.2 g-CO2e/kWh for a net difference from this factor alone of 6.6 g-CO2e/kWh.
+
+In fact, China’s investment in nuclear plants that take so long between planning and operation instead of wind or solar resulted in China’s CO2 emissions increasing 1.3 percent from 2016 to 2017 rather than declining by an estimated average of 3 percent. The resulting difference in air pollution emissions may have caused 69,000 additional air pollution deaths in China in 2016 alone, with additional deaths in years prior and since.
+
+
+Barrels of radioactive waste. Image credit: Creative Commons, ShinRyu Forgers
+
+7. Waste Risk
+Last but not least, consumed fuel rods from nuclear plants are radioactive waste. Most fuel rods are stored at the same site as the reactor that consumed them. This has given rise to hundreds of radioactive waste sites in many countries that must be maintained and funded for at least 200,000 years, far beyond the lifetimes of any nuclear power plant. The more nuclear waste that accumulates, the greater the risk of radioactive leaks, which can damage water supply, crops, animals, and humans.
+
+Summary
+To recap, new nuclear power costs about 5 times more than onshore wind power per kWh (between 2.3 to 7.4 times depending upon location and integration issues). Nuclear takes 5 to 17 years longer between planning and operation and produces on average 23 times the emissions per unit electricity generated (between 9 to 37 times depending upon plant size and construction schedule). In addition, it creates risk and cost associated with weapons proliferation, meltdown, mining lung cancer, and waste risks. Clean, renewables avoid all such risks.
+
+Nuclear advocates claim nuclear is still needed because renewables are intermittent and need natural gas for backup. However, nuclear itself never matches power demand so it needs backup. Even in France with one of the most advanced nuclear energy programs, the maximum ramp rate is 1 to 5 % per minute, which means they need natural gas, hydropower, or batteries, which ramp up 5 to 100 times faster, to meet peaks in demand. Today, in fact, batteries are beating natural gas for wind and solar backup needs throughout the world. A dozen independent scientific groups have further found that it is possible to match intermittent power demand with clean, renewable energy supply and storage, without nuclear, at low cost.
+
+Finally, many existing nuclear plants are so costly that their owners are demanding subsidies to stay open. For example, in 2016, three existing upstate New York nuclear plants requested and received subsidies to stay open using the argument that the plants were needed to keep emissions low. However, subsidizing such plants may increase carbon emissions and costs relative to replacing the plants with wind or solar as soon as possible. Thus, subsidizing nuclear would result in higher emissions and costs over the long term than replacing nuclear with renewables.
+
+Derivations and sources of the numbers provided herein can be found here.
+
+
+The Solution
+A breakthrough climate model shows that we have a window to stay below the dangerous threshold of 1.5 degrees Celsius, achieving net-zero emissions before 2040. The two-year collaboration with 17 leading scientists, entitled Achieving the Paris Climate Agreement Goals(APCAG), shows that we can prevent the worst impacts of climate change while unlocking trillions in economic benefits through rapid decarbonization of our energy systems, a transition to 100% renewable energy, and large-scale land restoration.
+
+Download the APCAG Executive Briefing to read more about the solutions to the climate crisis.

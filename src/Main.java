@@ -3,20 +3,26 @@ import java.util.*;
 
 public class Main {
 
+
+
+
     public static void main(String[] args) throws Exception {
 
-        //  testing article class to make sure stuff works
-        Article stop = new Article("library/nuclear-power/Article1.txt");
-        //Article 1: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
-        System.out.println(stop.rawContent);
-        System.out.println(stop.parsedContent);
-        System.out.println(Arrays.toString(stop.wordList));
-        System.out.println(stop.wordFrequency.toString());
-        System.out.println(stop.wordFrequencyList.toString());
-        System.out.println(stop.getNumStatements());
-        for (int i = 0; i < stop.wordFrequencyList.toArray().length; i++) {
 
-            System.out.println(stop.wordFrequency.get(stop.wordFrequencyList.get(i)) + "\t" + stop.wordFrequencyList.get(i));
+        //  testing article class to make sure stuff works
+        Article yale = new Article("media/Article1.txt");
+        Article oneEarth = new Article("media/article2.txt");
+        Article energy = new Article("media/article3.txt");
+        //Article 1: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
+        System.out.println(yale.rawContent);
+        System.out.println(yale.parsedContent);
+        System.out.println(Arrays.toString(yale.wordList));
+        System.out.println(yale.wordFrequency.toString());
+        System.out.println(yale.wordFrequencyList.toString());
+        System.out.println(yale.getNumStatements());
+        for (int i = 0; i < yale.wordFrequencyList.toArray().length; i++) {
+
+            System.out.println(yale.wordFrequency.get(yale.wordFrequencyList.get(i)) + "\t" + yale.wordFrequencyList.get(i));
 
         }
 

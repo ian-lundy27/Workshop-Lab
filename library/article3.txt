@@ -1,0 +1,53 @@
+Advantages and Challenges of Nuclear Energy
+June 11, 2024
+Office of Nuclear Energy Advantages and Challenges of Nuclear Energy
+Plant Vogtle Units 1-4
+Plant Vogtle Units 1-4
+Georgia Power
+Nuclear energy protects air quality by producing massive amounts of carbon-free electricity. It powers communities in 28 U.S. states and contributes to many non-electric applications, ranging from the medical field to space exploration.
+
+The Office of Nuclear Energy within the U.S. Department of Energy (DOE) focuses its research primarily on maintaining the existing fleet of reactors, developing new advanced reactor technologies, and improving the nuclear fuel cycle to increase the sustainability of our energy supply and strengthen the U.S. economy.
+
+Below are some of the main advantages of nuclear energy and the challenges currently facing the industry today.
+
+Advantages of Nuclear Energy
+Clean Energy Source
+Nuclear is the largest source of clean power in the United States. It generates nearly 775 billion kilowatthours of electricity each year and produces nearly half of the nation’s emissions-free electricity. This avoids more than 471 million metric tons of carbon each year, which is the equivalent of removing 100 million cars off of the road.
+
+Creates Jobs
+The nuclear industry supports nearly half a million jobs in the United States. Domestic nuclear power plants can employ up to 800 workers with salaries that are 50% higher than those of other generation sources. They also contribute billions of dollars annually to local economies through federal and state tax revenues.
+
+Supports National Security
+A strong civilian nuclear sector is essential to U.S. national security and energy diplomacy. The United States must maintain its global leadership in this arena to influence the peaceful use of nuclear technologies. The U.S. government works with countries in this capacity to build relationships and develop new opportunities for the nation’s nuclear technologies.
+
+Challenges of Nuclear Energy
+Public Awareness
+Commercial nuclear power is sometimes viewed by the general public as a dangerous or unstable process. This perception is often based on three global nuclear accidents, its false association with nuclear weapons, and how it is portrayed on popular television shows and films.
+
+DOE and its national labs are working with industry to develop new reactors and fuels that will increase the overall performance of these technologies and reduce the amount of nuclear waste that is produced.
+
+DOE also works to provide accurate, fact-based information about nuclear energy through its social media and STEM outreach efforts to educate the public on the benefits of nuclear energy.
+
+Used Fuel Transportation, Storage and Disposal
+Many people view used fuel as a growing problem and are apprehensive about its transportation, storage, and disposal. DOE is responsible for the eventual disposal and associated transport of all used fuel, most of which is currently securely stored at more than 70 sites in 35 states. For the foreseeable future, this fuel can safely remain at these facilities until a permanent disposal solution is determined by Congress.
+
+DOE is currently evaluating nuclear power plant sites and nearby transportation infrastructure to support the eventual transport of used fuel away from these sites.
+
+Subject to appropriations, the Department is moving forward on a government-owned consolidated interim storage facility project that includes rail transportation.
+
+The location of the storage facility would be selected through DOE's consent-based siting process that puts communities at the forefront and would ultimately reduce the number of locations where commercial spent nuclear fuel is stored in the United States.
+
+Constructing New Power Plants
+Building a nuclear power plant can be discouraging for stakeholders. Conventional reactor designs are considered multi-billion dollar infrastructure projects. High capital costs, licensing and regulation approvals, coupled with long lead times and construction delays, have also deterred public interest.
+
+microreactor_SMR image
+Microreactor (left) - Small Modular Reactor (right)
+
+DOE is rebuilding its nuclear workforce by supporting the construction of two new reactors at Plant Vogtle in Waynesboro, Georgia. The units are the first new reactors to begin construction in the United States in more than 30 years. The expansion project supported up to 9,000 workers at peak construction and created 800 permanent jobs at the facility when the units came online in 2023 and 2024.
+
+DOE is also supporting the development of smaller reactor designs, such as microreactors and small modular reactors, that will offer even more flexibility in size and power capacity to the customer. These factory-built systems are expected to dramatically reduce construction timelines and will make nuclear more affordable to build and operate.
+
+High Operating Costs
+Challenging market conditions have left the nuclear industry struggling to compete. DOE’s Light Water Reactor Sustainability (LWRS) program is working to overcome these economic challenges by modernizing plant systems to reduce operation and maintenance costs, while improving performance. In addition to its materials research that supports the long-term operation of the nation’s fleet of reactors, the program is also looking to diversify plant products through non-electric applications such as water desalination and hydrogen production.
+
+To further improve operating costs. DOE is also working with industry to develop new fuels and cladding known as accident tolerant fuels. These new fuels could increase plant performance, allowing for longer response times and will produce less waste. Accident tolerant fuels could gain widespread use by 2025.
