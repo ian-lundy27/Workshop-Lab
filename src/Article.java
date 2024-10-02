@@ -126,4 +126,16 @@ public class Article {
 
         return condensedWordList;
     }
+
+    public int statementCount() {
+        int count = 0;
+
+        for(int i = 0;i < parsedContent.length() - 1;i++) {
+            if(parsedContent.substring(i,i+2).equals(". ") || parsedContent.substring(i,i+2).equals("? ") || parsedContent.substring(i,i+2).equals("! ")) {
+                count++;
+            }
+        }
+
+        return count + 1;
+    }
 }
