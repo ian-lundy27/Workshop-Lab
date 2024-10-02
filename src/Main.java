@@ -7,9 +7,9 @@ public class Main {
 
 
         //  testing article class to make sure stuff works
-        Article yale = new Article("media/Article1.txt");
-        Article oneEarth = new Article("media/article2.txt");
-        Article energy = new Article("media/article3.txt");
+        Article yale = new Article("library/nuclear-power/article1.txt");
+        Article oneEarth = new Article("library/nuclear-power/article2.txt");
+        Article energy = new Article("library/nuclear-power/article3.txt");
         //Article 1: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
         System.out.println(yale.rawContent);
         System.out.println(yale.parsedContent);
