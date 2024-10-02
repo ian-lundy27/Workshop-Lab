@@ -104,7 +104,7 @@ public class Article {
 
         condensedWordList.addAll(Arrays.asList(wordList));
 
-        Article stopWords = new Article("stopwords.txt");
+        Article stopWords = new Article("library/stopwords.txt");
         stopWords.parseContent();
         stopWords.buildWordList();
 
