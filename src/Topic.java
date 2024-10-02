@@ -7,9 +7,11 @@ import java.util.LinkedList;
 
 public class Topic {
 
+    String name;
     LinkedList<Article> articles;
 
     public Topic(String path) throws IOException {
+        this.name = path;
         File dir = new File(path);
         File[] files = dir.listFiles();
         System.out.println(Arrays.toString(files));

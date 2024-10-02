@@ -27,7 +27,7 @@ public class Main {
 
 
 
-        File file = new File("media/project-information.txt");
+        File file = new File("library/project-information.txt");
 
         BufferedReader br = new BufferedReader(new FileReader(file));
 
@@ -69,6 +69,62 @@ public class Main {
         System.out.println(wordMap.get(sortedWordCount.getFirst()));
         System.out.println(sortedWordCount.getLast());
         System.out.println(wordMap.get(sortedWordCount.getLast()));
+
+    }
+
+    public static Scanner in = new Scanner(System.in);
+
+    public static void thing() throws IOException {
+
+        Topic[] topics;
+        topics = new Topic[]{new Topic("nuclear-power")};
+
+        String input;
+        Topic currentTopic;
+
+        while (true) {
+            currentTopic = null;
+            System.out.println("See article stats");
+            System.out.println("Topics:");
+            for (Topic topic : topics) {
+                System.out.println(topic.name);
+            }
+            System.out.print("Enter a topic name:");
+            input = in.nextLine();
+            for (Topic topic : topics) {
+                if (topic.name.equals(input)) {
+                    currentTopic = topic;
+                    break;
+                }
+            }
+            if (currentTopic == null) {
+                System.out.println("Topic not found");
+                continue;
+            }
+
+            System.out.println("Which article do you want to see?");
+
+            for (Article article : currentTopic.articles) {
+                System.out.println(article);
+            }
+
+            System.out.print("Enter the article you want to see: ");
+            input = in.nextLine();
+//            for (Article article : currentTopic.articles) {
+//                if (article.name.equals(input)) {
+//                    currentTopic = topic;
+//                    break;
+//                }
+//            }
+//            if (currentTopic == null) {
+//                System.out.println("Topic not found");
+//                continue;
+            }
+
+
+
+
+        }
 
     }
 
