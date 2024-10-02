@@ -98,6 +98,10 @@ public class Article {
 
     }
 
+    public int getArticleLength() {
+        return this.wordList.length;
+    }
+
     public ArrayList<String> removeStopWords() throws IOException {
 
         ArrayList<String> condensedWordList = new ArrayList<>();
