@@ -2,7 +2,6 @@ Advantages and Challenges of Nuclear Energy
 June 11, 2024
 Office of Nuclear Energy Advantages and Challenges of Nuclear Energy
 Plant Vogtle Units 1-4
-Plant Vogtle Units 1-4
 Georgia Power
 Nuclear energy protects air quality by producing massive amounts of carbon-free electricity. It powers communities in 28 U.S. states and contributes to many non-electric applications, ranging from the medical field to space exploration.
 
@@ -40,7 +39,6 @@ The location of the storage facility would be selected through DOE's consent-bas
 Constructing New Power Plants
 Building a nuclear power plant can be discouraging for stakeholders. Conventional reactor designs are considered multi-billion dollar infrastructure projects. High capital costs, licensing and regulation approvals, coupled with long lead times and construction delays, have also deterred public interest.
 
-microreactor_SMR image
 Microreactor (left) - Small Modular Reactor (right)
 
 DOE is rebuilding its nuclear workforce by supporting the construction of two new reactors at Plant Vogtle in Waynesboro, Georgia. The units are the first new reactors to begin construction in the United States in more than 30 years. The expansion project supported up to 9,000 workers at peak construction and created 800 permanent jobs at the facility when the units came online in 2023 and 2024.
