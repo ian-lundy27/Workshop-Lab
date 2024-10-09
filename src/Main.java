@@ -4,8 +4,15 @@ import java.util.*;
 public class Main {
 
     public static Scanner in = new Scanner(System.in);
+    public static Topic[] allTopics;
+    public static Topic curTopic;
+    public static Article curArticle;
 
     public static void main(String[] args) throws Exception {
+
+
+        discoverTopics();
+        selectTopic();
 
         thing();
         System.exit(0);
@@ -157,23 +164,77 @@ public class Main {
 
     }
 
-    public static void selectTopic() {
-        //  get all folders, load as list of topics
-        //  return topic
+    public static void discoverTopics() throws IOException {
+        allTopics = new Topic[]{new Topic("library/nuclear-power")};
     }
 
-    public static void selectArticle() {
-        //  get all articles in the topic, user selects
-        //  return article
+    public static void selectTopic() throws IOException {
+        System.out.println("Select a topic:\n0.\tExit");
+        for (int i = 0; i < allTopics.length; i++) {
+            System.out.println(i + 1 + ".\t" + allTopics[i].name);
+        }
+        int selection = getIntInput(0,allTopics.length);
+        if (selection == 0) System.exit(0);
+        else {
+            curTopic = allTopics[selection - 1];
+            selectArticle();
+        }
     }
 
-    public static void selectOption() {
-        //  options for statistics
-        //  print out result
+    public static void selectArticle() throws IOException {
+        System.out.println("Select an article:\n0.\tBack");
+        for (int i = 0; i < curTopic.articles.size(); i++) {
+            System.out.println(i + 1 + ".\t" + curTopic.articles.get(i).name);
+        }
+        int selection = getIntInput(0,curTopic.articles.size());
+        if (selection == 0) selectTopic();
+        else {
+            curArticle = curTopic.articles.get(selection - 1);
+            selectOption();
+        }
+    }
+
+    public static void selectOption() throws IOException {
+        System.out.println("Select a statistic:");
+        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (all)\n4.\tWord frequency (specific)");
+        int selection = getIntInput(0,4);
+        if (selection == 0) selectArticle();
+        else {
+            switch (selection) {
+                case 1:
+                    System.out.println("There are " + curArticle.wordList.length + " words in the article");
+                    break;
+                case 2:
+                    System.out.println("There are " + curArticle.statementCount() + " sentences in the article");
+                    break;
+                case 3:
+                    for (int i = 0; i < curArticle.wordFrequencyList.size(); i++) {
+                        String word = curArticle.wordFrequencyList.get(i);
+                        System.out.println(i + 1 + ".\t" + word + "\t" + curArticle.wordFrequency.get(word));
+                    }
+                    break;
+                case 4:
+                    getSingleWordFrequency();
+                    break;
+            }
+            selectOption();
+        }
+    }
+
+    public static void getSingleWordFrequency() throws IOException {
+        System.out.print("Enter word: ");
+        String word = in.nextLine();
+        int frequency = 0;
+        if (curArticle.wordFrequency.containsKey(word)) {
+            frequency = curArticle.wordFrequency.get(word);
+        }
+        System.out.println("The word '" + word  + "' occurs " + frequency + " times");
+        selectOption();
     }
 
     public static int getIntInput(int min, int max) {
         while (true) {
+            System.out.print("Enter selection: ");
             if (in.hasNextInt()) {
                 int selection = in.nextInt();
                 in.nextLine();
