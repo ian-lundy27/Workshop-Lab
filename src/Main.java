@@ -165,7 +165,24 @@ public class Main {
     }
 
     public static void discoverTopics() throws IOException {
-        allTopics = new Topic[]{new Topic("library/nuclear-power")};
+        File files = new File("library");
+        String[] contents = files.list();
+        ArrayList<Topic> topics = new ArrayList<>();
+        if (contents != null) {
+            ArrayList<String> subdirs = new ArrayList<>(Arrays.asList(contents));
+            for (int i = 0; i < subdirs.size(); i++) {
+                if (subdirs.get(i).contains(".")) {
+                    subdirs.remove(i);
+                    i--;
+                } else {
+                    topics.add(new Topic("library/" + subdirs.get(i)));
+                }
+            }
+            allTopics = topics.toArray(new Topic[0]);
+        } else {
+            System.out.println("No files found, exiting");
+            System.exit(1);
+        }
     }
 
     public static void selectTopic() throws IOException {
