@@ -10,12 +10,17 @@ fairfieldArticle2: https://www.fairfield.edu/news/archive/2024/october/elicit-br
 
 fairfieldArticle3: https://thinkspace.fairfield.edu/post/722199482407731200/the-ai-education-problem-the-solutions-right-in
 
-article1.txt: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
+nuclearArticle1.txt: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
 
-article2.txt: https://www.oneearth.org/the-7-reasons-why-nuclear-energy-is-not-the-answer-to-solve-climate-change/
+nucleararticle2.txt: https://www.oneearth.org/the-7-reasons-why-nuclear-energy-is-not-the-answer-to-solve-climate-change/
 
-article3.txt: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy
+nuclearArticle3.txt: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy
 
+gamblingArticle1.txt: https://www.rollingstone.com/culture/culture-features/shohei-ohtani-pete-rose-baseball-gambling-history-1234997068/
+
+gamblingArticle2.txt: https://www.mlb.com/news/mlb-announces-sports-betting-violation-suspensions
+
+gamblingArticle3.txt: https://www.cbssports.com/mlb/news/baseball-gambling-scandals-padres-tucupita-marcano-joins-shohei-ohtanis-interpreter-pete-rose-black-sox/
 
 #Topic#
 
