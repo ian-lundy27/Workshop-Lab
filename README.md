@@ -3,6 +3,13 @@
 This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are three classes, main included.
 
 Articles used for testing:
+
+fairfieldArticle1: https://www.fairfield.edu/news/archive/2024/september/enrollment-success-with-strong-us-news-world-report-rankings.html
+
+fairfieldArticle2: https://www.fairfield.edu/news/archive/2024/october/elicit-brewing-company-partnership.html
+
+fairfieldArticle3: https://thinkspace.fairfield.edu/post/722199482407731200/the-ai-education-problem-the-solutions-right-in
+
 article1.txt: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
 
 article2.txt: https://www.oneearth.org/the-7-reasons-why-nuclear-energy-is-not-the-answer-to-solve-climate-change/
