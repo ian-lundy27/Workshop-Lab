@@ -10,36 +10,40 @@ public class Article {
     HashMap<String,Integer> wordFrequency;
     LinkedList<String> wordFrequencyList;
 
-    public Article (String filePath, String name) throws IOException {
+    public Article (String filePath, String name) {
 
         this.name = name.split("\\.")[0];
 
-        //  Create file object for target file
-        filePath += "/" + name;
-        File article = new File(filePath);
+        try {
+            //  Create file object for target file
+            filePath += "/" + name;
+            File article = new File(filePath);
 
-        //  Open reader for file
-        BufferedReader br = new BufferedReader(new FileReader(article));
+            //  Open reader for file
+            BufferedReader br = new BufferedReader(new FileReader(article));
 
-        //  Declare vars for temp storing each line and for building string of all text
-        String line;
-        StringBuilder text = new StringBuilder();
+            //  Declare vars for temp storing each line and for building string of all text
+            String line;
+            StringBuilder text = new StringBuilder();
 
-        //  Read file line by line, adding to string builder
-        while ((line = br.readLine()) != null) {
-            text.append(line).append("\n");
+            //  Read file line by line, adding to string builder
+            while ((line = br.readLine()) != null) {
+                text.append(line).append("\n");
+            }
+
+            br.close();
+
+            //  Assign read content to object field
+            this.rawContent = text.toString();
+
+            //  Initialize object fields
+            parseContent();
+            buildWordList();
+            findWordFrequency();
+            sortFrequencyList();
+        } catch (Exception e) {
+            System.out.println("Failed to initialize article '" + name + "': " + e.getMessage());
         }
-
-        br.close();
-
-        //  Assign read content to object field
-        this.rawContent = text.toString();
-
-        //  Initialize object fields
-        parseContent();
-        buildWordList();
-        findWordFrequency();
-        sortFrequencyList();
 
     }
 
@@ -114,19 +118,11 @@ public class Article {
 
     }
 
-    public int getNumStatements() {
-
-        //  Counts num periods, takes length of full text and subtracts length of text w/o periods to get # periods
-        //  Assumes sentences have '. ', doesn't count last sentence. Oops
-        return this.parsedContent.length() - this.parsedContent.replaceAll("\\. "," ").length();
-
-    }
-
     public int getArticleLength() {
         return this.wordList.length;
     }
 
-    public ArrayList<String> removeStopWords() throws IOException {
+    public ArrayList<String> removeStopWords() {
 
         ArrayList<String> condensedWordList = new ArrayList<>();
 

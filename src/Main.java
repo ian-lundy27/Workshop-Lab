@@ -8,14 +8,14 @@ public class Main {
     public static Topic curTopic;
     public static Article curArticle;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         discoverTopics();
         selectTopic();
 
     }
 
-    public static void discoverTopics() throws IOException {
+    public static void discoverTopics() {
         File files = new File("library");
         String[] contents = files.list();
         ArrayList<Topic> topics = new ArrayList<>();
@@ -36,7 +36,7 @@ public class Main {
         }
     }
 
-    public static void selectTopic() throws IOException {
+    public static void selectTopic() {
         System.out.println("Select a topic:\n0.\tExit");
         for (int i = 0; i < allTopics.length; i++) {
             System.out.println(i + 1 + ".\t" + allTopics[i].name);
@@ -49,7 +49,7 @@ public class Main {
         }
     }
 
-    public static void selectArticle() throws IOException {
+    public static void selectArticle() {
         System.out.println("Select an article:\n0.\tBack");
         for (int i = 0; i < curTopic.articles.size(); i++) {
             System.out.println(i + 1 + ".\t" + curTopic.articles.get(i).name);
@@ -62,7 +62,7 @@ public class Main {
         }
     }
 
-    public static void selectOption() throws IOException {
+    public static void selectOption() {
         System.out.println("Select a statistic:");
         System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (all)\n4.\tWord frequency (specific)");
         int selection = getIntInput(0,4);
@@ -89,7 +89,7 @@ public class Main {
         }
     }
 
-    public static void getSingleWordFrequency() throws IOException {
+    public static void getSingleWordFrequency() {
         System.out.print("Enter word: ");
         String word = in.nextLine();
         int frequency = 0;
