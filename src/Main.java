@@ -3,13 +3,18 @@ import java.util.*;
 
 public class Main {
 
+    public static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) throws Exception {
+
+        thing();
+        System.exit(0);
 
 
         //  testing article class to make sure stuff works
-        Article yale = new Article("library/nuclear-power/article1.txt");
-        Article oneEarth = new Article("library/nuclear-power/article2.txt");
-        Article energy = new Article("library/nuclear-power/article3.txt");
+        Article yale = new Article("library/nuclear-power","article1.txt");
+        Article oneEarth = new Article("library/nuclear-power","article2.txt");
+        Article energy = new Article("library/nuclear-power","article3.txt");
         //Article 1: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
         System.out.println(yale.rawContent);
         System.out.println(yale.parsedContent);
@@ -31,11 +36,11 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new FileReader(file));
 
-        String in;
+        String input;
         StringBuilder text = new StringBuilder();
 
-        while ((in = br.readLine()) != null) {
-            text.append(in).append("\n");
+        while ((input = br.readLine()) != null) {
+            text.append(input).append("\n");
         }
 
         System.out.println(text);
@@ -72,24 +77,30 @@ public class Main {
 
     }
 
-    public static Scanner in = new Scanner(System.in);
+
 
     public static void thing() throws IOException {
 
+        Topic t = new Topic("library/nuclear-power");
+        System.out.println(t.articles);
+
         Topic[] topics;
-        topics = new Topic[]{new Topic("nuclear-power")};
+        topics = new Topic[]{new Topic("library/nuclear-power")};
 
         String input;
         Topic currentTopic;
+        Article currentArticle;
 
+        label:
         while (true) {
             currentTopic = null;
+            currentArticle = null;
             System.out.println("See article stats");
             System.out.println("Topics:");
             for (Topic topic : topics) {
                 System.out.println(topic.name);
             }
-            System.out.print("Enter a topic name:");
+            System.out.print("Enter a topic name: ");
             input = in.nextLine();
             for (Topic topic : topics) {
                 if (topic.name.equals(input)) {
@@ -105,20 +116,38 @@ public class Main {
             System.out.println("Which article do you want to see?");
 
             for (Article article : currentTopic.articles) {
-                System.out.println(article);
+                System.out.println(article.name);
             }
 
             System.out.print("Enter the article you want to see: ");
             input = in.nextLine();
-//            for (Article article : currentTopic.articles) {
-//                if (article.name.equals(input)) {
-//                    currentTopic = topic;
-//                    break;
-//                }
-//            }
-//            if (currentTopic == null) {
-//                System.out.println("Topic not found");
-//                continue;
+            for (Article article : currentTopic.articles) {
+                if (article.name.equals(input)) {
+                    currentArticle = article;
+                    break;
+                }
+            }
+            if (currentArticle == null) {
+                System.out.println("Article not found");
+                continue;
+            }
+
+            System.out.println("What stats do you want to see?");
+            System.out.println("1\tWord count\n2\tNumber of sentences");
+            System.out.print("Enter selection: ");
+            input = in.nextLine();
+            switch (input) {
+                case "1":
+                    System.out.println(currentArticle.wordList.length);
+                    break;
+                case "2":
+                    System.out.println(currentArticle.statementCount());
+                    break;
+                case "3":
+                    break label;
+                default:
+                    System.out.println("Invalid selection");
+                    break;
             }
 
 
@@ -126,6 +155,34 @@ public class Main {
 
         }
 
+    }
+
+    public static void selectTopic() {
+        //  get all folders, load as list of topics
+        //  return topic
+    }
+
+    public static void selectArticle() {
+        //  get all articles in the topic, user selects
+        //  return article
+    }
+
+    public static void selectOption() {
+        //  options for statistics
+        //  print out result
+    }
+
+    public static int getIntInput(int min, int max) {
+        while (true) {
+            if (in.hasNextInt()) {
+                int selection = in.nextInt();
+                in.nextLine();
+                if (selection >= min && selection <= max) return selection;
+            } else {
+                in.nextLine();
+            }
+            System.out.println("Enter a number between " + min + " and " + max);
+        }
     }
 
 }

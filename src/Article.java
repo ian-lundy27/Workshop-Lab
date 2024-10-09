@@ -3,15 +3,19 @@ import java.util.*;
 
 public class Article {
 
+    String name;
     String rawContent;
     String parsedContent;
     String[] wordList;
     HashMap<String,Integer> wordFrequency;
     LinkedList<String> wordFrequencyList;
 
-    public Article (String filePath) throws IOException {
+    public Article (String filePath, String name) throws IOException {
+
+        this.name = name.split("\\.")[0];
 
         //  Create file object for target file
+        filePath += "/" + name;
         File article = new File(filePath);
 
         //  Open reader for file
@@ -42,7 +46,27 @@ public class Article {
     public void parseContent() {
 
         //  Remove anything not word or number or period, reduce excess spaces
-        this.parsedContent = this.rawContent.replaceAll("[^A-Za-z0-9\\.]"," ").replaceAll(" +"," ").trim();
+        //  These are a lot of regex rules that handle some non-obvious cases where
+        //      removing any non-word character may cause errors, such as with the word x-ray
+        this.parsedContent = this.rawContent.replaceAll("’s","");
+        this.parsedContent = this.parsedContent.replaceAll("[',\"]","");
+        this.parsedContent = this.parsedContent.replaceAll("([0-9])\\-([0-9])","$1 $2");
+        this.parsedContent = this.parsedContent.replaceAll("([a-zA-Z])-([^a-zA-Z])","$1 $2");
+        this.parsedContent = this.parsedContent.replaceAll("([^a-zA-Z])-([a-zA-Z])","$1 $2");
+        this.parsedContent = this.parsedContent.replaceAll("[^A-Za-z0-9\\.\\-\n]+"," ");
+
+        //  Replace any acronyms (such as U.S.A.) with non-period version (USA) so they don't get counted as sentences later
+        //      Demarcate acronyms with %%%%, gets acronym sections and removes periods
+        this.parsedContent = this.parsedContent.replaceAll("((?:\\w+\\.){2,})","%%$1%%");
+        String[] temp = parsedContent.split("%%");
+        for (int i = 1; i < temp.length; i += 2) {
+            temp[i] = temp[i].replaceAll("\\.","");
+        }
+        this.parsedContent = String.join("", temp);
+
+        //  Trim any excess whitespace
+        this.parsedContent = this.parsedContent.trim();
+
 
     }
 
@@ -108,7 +132,7 @@ public class Article {
 
         condensedWordList.addAll(Arrays.asList(wordList));
 
-        Article stopWords = new Article("library/stopwords.txt");
+        Article stopWords = new Article("library","stopwords.txt");
         stopWords.parseContent();
         stopWords.buildWordList();
 
