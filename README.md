@@ -16,11 +16,11 @@ nucleararticle2.txt: https://www.oneearth.org/the-7-reasons-why-nuclear-energy-i
 
 nuclearArticle3.txt: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy
 
-gamblingArticle1.txt: https://www.rollingstone.com/culture/culture-features/shohei-ohtani-pete-rose-baseball-gambling-history-1234997068/
+baseballGamblingHistory.txt: https://www.cbssports.com/mlb/news/baseball-gambling-scandals-padres-tucupita-marcano-joins-shohei-ohtanis-interpreter-pete-rose-black-sox/
 
-gamblingArticle2.txt: https://www.mlb.com/news/mlb-announces-sports-betting-violation-suspensions
+gamblingBans.txt: https://www.mlb.com/news/mlb-announces-sports-betting-violation-suspensions
 
-gamblingArticle3.txt: https://www.cbssports.com/mlb/news/baseball-gambling-scandals-padres-tucupita-marcano-joins-shohei-ohtanis-interpreter-pete-rose-black-sox/
+ohtaniGambling.txt: https://www.rollingstone.com/culture/culture-features/shohei-ohtani-pete-rose-baseball-gambling-history-1234997068/
 
 #Topic#
 
