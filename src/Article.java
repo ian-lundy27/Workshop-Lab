@@ -53,7 +53,7 @@ public class Article {
         this.parsedContent = this.parsedContent.replaceAll("([0-9])\\-([0-9])","$1 $2");
         this.parsedContent = this.parsedContent.replaceAll("([a-zA-Z])-([^a-zA-Z])","$1 $2");
         this.parsedContent = this.parsedContent.replaceAll("([^a-zA-Z])-([a-zA-Z])","$1 $2");
-        this.parsedContent = this.parsedContent.replaceAll("[^A-Za-z0-9\\.\\-\n]+"," ");
+        this.parsedContent = this.parsedContent.replaceAll("[^A-Za-z0-9\\.\\-]+"," ");
 
         //  Replace any acronyms (such as U.S.A.) with non-period version (USA) so they don't get counted as sentences later
         //      Demarcate acronyms with %%%%, gets acronym sections and removes periods
