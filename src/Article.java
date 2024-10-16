@@ -78,8 +78,9 @@ public class Article {
 
         //  Reduces strings to just words + numbers, splits string into array
         this.wordList = this.parsedContent.replaceAll("\\.","").toLowerCase().split(" ");
-        this.wordList = this.removeStopWords().toArray(new String[0]);
-
+        if (!this.name.equals("stopwords")) {
+            this.wordList = this.removeStopWords().toArray(new String[0]);
+        }
     }
 
     public void findWordFrequency() {
