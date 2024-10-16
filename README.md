@@ -1,5 +1,7 @@
 "# Workshop-Lab" 
 
+Project Group: Michael Considine, Ian Lundy, Michael Connors
+
 This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are three classes, main included.
 
 Articles used for testing:
@@ -28,7 +30,7 @@ The topic class takes a file directory and extracts all of the files inside into
 
 #Article#
 
-The Article class makes the article into a string file, where other methods parse and analyze the content.
+The Article class makes the article into a string file, where other methods parse and analyze the content, such as retrieving the number of words, statements, individual words, and removing stop words.
 
 -parseContent: Skims through the article and removes all characters except for letters and numbers, this makes a list of all words in the file without anything else. Removal exceptions for words like x-ray and U.S.A, so that they keep their hyphens and periods respectively.
 
@@ -45,3 +47,7 @@ The Article class makes the article into a string file, where other methods pars
 -removeStopWords: Makes an array list of all words, excluding the stop words listed in the "stopwords.txt" file.
 
 -statementCount: Count periods, question marks, and exclamation marks to return the number of sentences.
+
+#Main#
+
+Makes instances of the topic class for each of the three topics, and creates a basic user interface to interact and fetch information from the articles.
