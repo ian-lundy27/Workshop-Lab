@@ -5,23 +5,23 @@ Michael Considine, Ian Lundy, Michael Connors at Fairfield University
 
 # **Articles used for testing:**
 
-fairfieldArticle1: https://www.fairfield.edu/news/archive/2024/september/enrollment-success-with-strong-us-news-world-report-rankings.html
+Undergraduate Rankings.txt: https://www.fairfield.edu/news/archive/2024/september/enrollment-success-with-strong-us-news-world-report-rankings.html
 
-fairfieldArticle2: https://www.fairfield.edu/news/archive/2024/october/elicit-brewing-company-partnership.html
+Alumni Beer.txt: https://www.fairfield.edu/news/archive/2024/october/elicit-brewing-company-partnership.html
 
-fairfieldArticle3: https://thinkspace.fairfield.edu/post/722199482407731200/the-ai-education-problem-the-solutions-right-in
+AI-Education Problem.txt: https://thinkspace.fairfield.edu/post/722199482407731200/the-ai-education-problem-the-solutions-right-in
 
-nuclearArticle1.txt: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
+Energy Solution.txt: https://e360.yale.edu/features/why-nuclear-power-must-be-part-of-the-energy-solution-environmentalists-climate
 
-nucleararticle2.txt: https://www.oneearth.org/the-7-reasons-why-nuclear-energy-is-not-the-answer-to-solve-climate-change/
+Not the Answer.txt: https://www.oneearth.org/the-7-reasons-why-nuclear-energy-is-not-the-answer-to-solve-climate-change/
 
-nuclearArticle3.txt: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy
+Advantages and Challenges.txt: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy
 
-baseballGamblingHistory.txt: https://www.cbssports.com/mlb/news/baseball-gambling-scandals-padres-tucupita-marcano-joins-shohei-ohtanis-interpreter-pete-rose-black-sox/
+Baseball Gambling History.txt: https://www.cbssports.com/mlb/news/baseball-gambling-scandals-padres-tucupita-marcano-joins-shohei-ohtanis-interpreter-pete-rose-black-sox/
 
-gamblingBans.txt: https://www.mlb.com/news/mlb-announces-sports-betting-violation-suspensions
+Gambling Bans.txt: https://www.mlb.com/news/mlb-announces-sports-betting-violation-suspensions
 
-ohtaniGambling.txt: https://www.rollingstone.com/culture/culture-features/shohei-ohtani-pete-rose-baseball-gambling-history-1234997068/
+Ohtani Gambling.txt: https://www.rollingstone.com/culture/culture-features/shohei-ohtani-pete-rose-baseball-gambling-history-1234997068/
 
 # **Overview**
 
