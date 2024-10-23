@@ -25,4 +25,22 @@ public class Topic {
         }
     }
 
+    public Article richestText(){
+        int richestWordCount = 0;
+        Article richestArticle = null;
+        for (Article article : articles) {
+            if (article.wordFrequencyList == null) {
+                article.parseContent();
+                article.buildWordList();
+                article.findWordFrequency();
+                article.sortFrequencyList();
+            }
+            if (article.wordFrequencyList.size() > richestWordCount){
+                richestArticle = article;
+                richestWordCount = article.wordFrequencyList.size();
+            }
+        }
+        return richestArticle;
+    }
+
 }
