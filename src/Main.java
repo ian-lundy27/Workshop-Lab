@@ -64,8 +64,8 @@ public class Main {
 
     public static void selectOption() {
         System.out.println("Select a statistic:");
-        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (range)\n4.\tWord frequency (single word)");
-        int selection = getIntInput(0,4);
+        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (range)\n4.\tWord frequency (single word)\n5.\tRichest vocabulary");
+        int selection = getIntInput(0,5);
         if (selection == 0) selectArticle();
         else {
             switch (selection) {
@@ -81,6 +81,9 @@ public class Main {
                 case 4:
                     getSingleWordFrequency();
                     break;
+                case 5:
+                    Article richestArticle = curTopic.richestText();
+                    System.out.println(richestArticle.name + " has the richest vocabulary among " + curTopic.name + " articles with " + richestArticle.wordFrequencyList.size() + " unique words");
             }
             selectOption();
         }
@@ -98,8 +101,7 @@ public class Main {
     }
 
     public static void getMultiWordFrequency() {
-        System.out.print("There are " + curArticle.wordFrequencyList.size() + " unique words in the article\n" +
-                "Enter how many of the most frequent words to list: ");
+        System.out.print("There are " + curArticle.wordFrequencyList.size() + " unique words in the article");
         int range = getIntInput(0,curArticle.wordFrequencyList.size());
         if (range == 0) return;
         for (int i = 0; i < range; i++) {
