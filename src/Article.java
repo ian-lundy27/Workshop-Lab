@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class Article {
@@ -17,24 +16,9 @@ public class Article {
         try {
             //  Create file object for target file
             filePath += "/" + name;
-            File article = new File(filePath);
-
-            //  Open reader for file
-            BufferedReader br = new BufferedReader(new FileReader(article));
-
-            //  Declare vars for temp storing each line and for building string of all text
-            String line;
-            StringBuilder text = new StringBuilder();
-
-            //  Read file line by line, adding to string builder
-            while ((line = br.readLine()) != null) {
-                text.append(line).append("\n");
-            }
-
-            br.close();
 
             //  Assign read content to object field
-            this.rawContent = text.toString();
+            this.rawContent = ReadFiler.filepathToString(filePath);
 
             //  Initialize object fields
             parseContent();
@@ -120,15 +104,9 @@ public class Article {
 
     }
 
-    public int getArticleLength() {
-        return this.wordList.length;
-    }
-
     public ArrayList<String> removeStopWords() {
 
-        ArrayList<String> condensedWordList = new ArrayList<>();
-
-        condensedWordList.addAll(Arrays.asList(wordList));
+        ArrayList<String> condensedWordList = new ArrayList<>(Arrays.asList(wordList));
 
         Article stopWords = new Article("library","stopwords.txt");
         stopWords.parseContent();
@@ -153,7 +131,7 @@ public class Article {
         int count = 0;
 
         for(int i = 0;i < parsedContent.length() - 1;i++) {
-            if(parsedContent.substring(i,i+2).equals(". ") || parsedContent.substring(i,i+2).equals("? ") || parsedContent.substring(i,i+2).equals("! ")) {
+            if(parsedContent.startsWith(". ", i) || parsedContent.startsWith("? ", i) || parsedContent.startsWith("! ", i)) {
                 count++;
             }
         }
