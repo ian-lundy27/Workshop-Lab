@@ -23,6 +23,10 @@ Gambling Bans.txt: https://www.mlb.com/news/mlb-announces-sports-betting-violati
 
 Ohtani Gambling.txt: https://www.rollingstone.com/culture/culture-features/shohei-ohtani-pete-rose-baseball-gambling-history-1234997068/
 
+# **Sentiment analysis**
+
+CSV of words and their polarity used is stored under word-sentiments.csv. The list was sourced from https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/ and reduced to a csv of only word and polarity.
+
 # **Overview**
 
 This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are also two other topics under the library folder. There are three total classes, Topic, Article, and Main.
