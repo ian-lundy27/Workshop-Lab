@@ -64,7 +64,7 @@ public class Main {
 
     public static void selectOption() {
         System.out.println("Select a statistic:");
-        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (all)\n4.\tWord frequency (specific)");
+        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (range)\n4.\tWord frequency (single word)");
         int selection = getIntInput(0,4);
         if (selection == 0) selectArticle();
         else {
@@ -76,10 +76,7 @@ public class Main {
                     System.out.println("There are " + curArticle.statementCount() + " sentences in the article");
                     break;
                 case 3:
-                    for (int i = 0; i < curArticle.wordFrequencyList.size(); i++) {
-                        String word = curArticle.wordFrequencyList.get(i);
-                        System.out.println(i + 1 + ".\t" + word + "\t" + curArticle.wordFrequency.get(word));
-                    }
+                    getMultiWordFrequency();
                     break;
                 case 4:
                     getSingleWordFrequency();
@@ -98,6 +95,17 @@ public class Main {
         }
         System.out.println("The word '" + word  + "' occurs " + frequency + " times");
         selectOption();
+    }
+
+    public static void getMultiWordFrequency() {
+        System.out.print("There are " + curArticle.wordFrequencyList.size() + " unique words in the article\n" +
+                "Enter how many of the most frequent words to list: ");
+        int range = getIntInput(0,curArticle.wordFrequencyList.size());
+        if (range == 0) return;
+        for (int i = 0; i < range; i++) {
+            String word = curArticle.wordFrequencyList.get(i);
+            System.out.println(i + 1 + ".\t" + word + "\t" + curArticle.wordFrequency.get(word));
+        }
     }
 
     public static int getIntInput(int min, int max) {
