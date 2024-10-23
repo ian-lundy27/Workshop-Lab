@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        new SentimentAnalysis();
         discoverTopics();
         selectTopic();
 
@@ -64,8 +65,8 @@ public class Main {
 
     public static void selectOption() {
         System.out.println("Select a statistic:");
-        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (range)\n4.\tWord frequency (single word)\n5.\tRichest vocabulary");
-        int selection = getIntInput(0,5);
+        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (range)\n4.\tWord frequency (single word)\n5.\tRichest vocabulary\n6.\tPolarity");
+        int selection = getIntInput(0,6);
         if (selection == 0) selectArticle();
         else {
             switch (selection) {
@@ -84,6 +85,8 @@ public class Main {
                 case 5:
                     Article richestArticle = curTopic.richestText();
                     System.out.println(richestArticle.name + " has the richest vocabulary among " + curTopic.name + " articles with " + richestArticle.wordFrequencyList.size() + " unique words");
+                case 6:
+                    System.out.println("Polarity of " + curArticle.name + ": " + SentimentAnalysis.getArticlePolarity(curArticle));
             }
             selectOption();
         }
