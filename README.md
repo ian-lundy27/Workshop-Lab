@@ -31,7 +31,9 @@ CSV of words and their polarity used is stored under word-sentiments.csv. The li
 
 This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are also two other topics under the library folder. There are three total classes, Topic, Article, and Main.
 
-![alt text](UML Diagram.png)
+![alt text][UML]
+
+[UML]: https://github.com/ian-lundy27/Workshop-Lab/blob/main/UML%20Diagram.png
 
 ### Topic
 
