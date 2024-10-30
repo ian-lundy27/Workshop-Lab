@@ -26,10 +26,10 @@ public class Topic {
     }
 
     public Article richestText(){
-        int richestWordCount = 0;
+        double richestWordCount = 0;
         Article richestArticle = null;
         for (Article article : articles) {
-            if (article.wordFrequencyList.size() > richestWordCount){
+            if ((double)article.wordFrequencyList.size()/article.wordList.length > richestWordCount){
                 richestArticle = article;
                 richestWordCount = article.wordFrequencyList.size();
             }
