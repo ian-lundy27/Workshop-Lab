@@ -37,4 +37,12 @@ public class Topic {
         return richestArticle;
     }
 
+    public void top20Words(Article article){
+        System.out.println("The top 20 non-stop words in this article are:");
+        for (int i = 0; i < 20; i++) {
+            String word = article.wordFrequencyList.get(i);
+            System.out.println(i + 1 + ".\t" + word + "\t" + article.wordFrequency.get(word));
+        }
+
+    }
 }
