@@ -88,9 +88,9 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("Polarity of " + curArticle.name + ": " + SentimentAnalysis.getArticlePolarity(curArticle));
+                    break;
                 case 7:
                     curTopic.top20Words(curArticle);
-                    break;
             }
             selectOption();
         }
@@ -130,5 +130,4 @@ public class Main {
             System.out.println("Enter a number between " + min + " and " + max);
         }
     }
-
 }
