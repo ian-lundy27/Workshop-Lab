@@ -85,6 +85,7 @@ public class Main {
                 case 5:
                     Article richestArticle = curTopic.richestText();
                     System.out.println(richestArticle.name + " has the richest vocabulary among " + curTopic.name + " articles with " + richestArticle.wordFrequencyList.size() + " unique words");
+                    break;
                 case 6:
                     System.out.println("Polarity of " + curArticle.name + ": " + SentimentAnalysis.getArticlePolarity(curArticle));
             }
