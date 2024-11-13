@@ -35,8 +35,6 @@ This project is designed to read the text of articles, and to gather multiple pi
 
 [UML]: https://github.com/ian-lundy27/Workshop-Lab/blob/main/UML%20Diagram.png
 
-![alt_text](UML%20Diagram.png)
-
 ### Topic
 
 The topic class takes a file directory and extracts all the files inside into a linked list. From there it makes an Article object with each of the files in that list. It also has methods to analyze the Articles:
