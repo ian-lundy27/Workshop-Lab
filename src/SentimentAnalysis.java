@@ -74,9 +74,9 @@ public class SentimentAnalysis {
 //        return positive + negative;
 //    }
 
-    public static float tunedPolarity(Article article) {
+    public static double tunedPolarity(Article article) {
         String[] sentences = article.parsedContent.split("\\.");
-        boolean bad; float total = 0;
+        boolean bad; double total = 0;
         for (String sentence : sentences) {
             bad = false;
             String[] words = sentence.split(" ");
@@ -87,32 +87,6 @@ public class SentimentAnalysis {
                 if (polarityMap.containsKey(word)) total += bad ? -polarityMap.get(word) : polarityMap.get(word);
             }
         }
-        return total / article.wordList.length;
+        return total / Math.log(article.wordList.length);
     }
-
-    public static HashMap<String,Integer> getUpsAndDowns(Article article) {
-        float temp; int positive = 0; int negative = 0;
-        for (String word : article.wordList) {
-            if (polarityMap.containsKey(word)) {
-                temp = polarityMap.get(word);
-                if (temp > 0) positive += 1;
-                else if (temp < 0) negative += 1;
-            }
-        }
-        HashMap<String,Integer> toReturn = new HashMap<>();
-        toReturn.put("positive", positive); toReturn.put("negative", negative);
-        return toReturn;
-    }
-
-    public static HashMap<String,Float> gotPolarityStats(Article article) {
-        HashMap<String,Integer> polarities = getUpsAndDowns(article);
-        float positive = (float) polarities.get("positive"); float negative = (float) polarities.get("negative");
-        float polarity = getArticlePolarity(article);
-        float dumbPolarity = tunedPolarity(article);
-        HashMap<String,Float> toReturn = new HashMap<>();
-        toReturn.put("positive", positive); toReturn.put("negative", negative);
-        toReturn.put("polarity", polarity); toReturn.put("dumb", dumbPolarity);
-        return toReturn;
-    }
-
 }
