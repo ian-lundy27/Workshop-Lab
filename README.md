@@ -29,15 +29,21 @@ CSV of words and their polarity used is stored under word-sentiments.csv. The li
 
 # **Overview**
 
-This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are also two other topics under the library folder. There are three total classes, Topic, Article, and Main.
+This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are also two other topics under the library folder. There are five total classes, Topic, Article, SentimentAnalysis, ReadFiler, and Main.
 
 ![alt text][UML]
 
 [UML]: https://github.com/ian-lundy27/Workshop-Lab/blob/main/UML%20Diagram.png
 
+![alt_text](UML%20Diagram.png)
+
 ### Topic
 
-The topic class takes a file directory and extracts all of the files inside into a linked list. From there it makes an Article object with each of the files in that list.
+The topic class takes a file directory and extracts all the files inside into a linked list. From there it makes an Article object with each of the files in that list. It also has methods to analyze the Articles:
+
+*richestText* Compares all the Articles in the Topic, and return the one with the most diverse vocabulary.
+
+*top20Words* Returns the 20 most frequent words in the inputted Article.
 
 ### Article
 
@@ -49,16 +55,17 @@ The Article class makes the article into a string file, where other methods pars
 
 *findWordFrequency*: Builds a hash map to keep count of how many times each word in the article appears.
 
-*sortFrequencyList*: Builds a linked list with all of the words sorted by number of appearances. Words that appear the same amount of times are sorted alphabetically.
-
-*getNumStatements*: Returns the number of punctuation marks in the article using the parsed content string.
-
-*getArticleLength*: Returns the total number of words in the article.
+*sortFrequencyList*: Builds a linked list with all the words sorted by number of appearances. Words that appear the same amount of times are sorted alphabetically.
 
 *removeStopWords*: Makes an array list of all words, excluding the stop words listed in the "stopwords.txt" file.
 
 *statementCount*: Count periods, question marks, and exclamation marks to return the number of sentences.
 
-### Main
+### SentimentAnalysis (Class)
+The SentimentAnalysis class is designed to take in a given Article, and from there analyze the sentiment of the text in the Article to determine if it has a positive or negative tone.
 
+### ReadFiler
+This class is designed to take in a file, and uses a buffered reader to convert all the text in the file into a String. *filepathToString* converts the file path into a File variable type, and from there *fileToString* reads the File to retrieve a String of all the text.
+
+### Main
 Makes instances of the topic class for each of the three topics, and creates a basic user interface to interact and fetch information from the articles.
