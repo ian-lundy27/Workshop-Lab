@@ -91,6 +91,7 @@ public class Main {
                     break;
                 case 7:
                     curTopic.top20Words(curArticle);
+                    System.out.println("Dumb polarity of " + curArticle.name + ": " + SentimentAnalysis.tunedPolarity(curArticle));
             }
             selectOption();
         }
@@ -101,7 +102,7 @@ public class Main {
         String word = in.nextLine();
         int frequency = 0;
         if (curArticle.wordFrequency.containsKey(word)) {
-            frequency = curArticle.wordFrequency.get(word);
+            frequency = curArticle.wordFrequency.get(word.toLowerCase());
         }
         System.out.println("The word '" + word  + "' occurs " + frequency + " times");
         selectOption();
