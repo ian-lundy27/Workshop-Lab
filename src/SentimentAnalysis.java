@@ -24,7 +24,7 @@ public class SentimentAnalysis {
         String txt = ReadFiler.filepathToString("library/lexicon_scores.txt");
         String[] partial = txt.split("\n");
         polarityMap = new HashMap<>();
-        float polarity = 0;
+        float polarity;
         for (String values : partial) {
             polarity = SentimentAnalysis.safeParseFloat(values.split("\t")[1]);
             polarityMap.put(values.split("\t")[0], polarity);
@@ -46,34 +46,6 @@ public class SentimentAnalysis {
         }
     }
 
-    public static float getArticlePolarity(Article article) {
-        float polarity = 0;
-        for (String word : article.wordList) {
-            if (polarityMap.containsKey(word)) {
-//                System.out.println(word + "\t" + polarityMap.get(word));
-                polarity += polarityMap.get(word);
-            }
-        }
-        return polarity;
-    }
-
-//    public static float dumbPolarity(Article article) {
-//        float positive = 0;
-//        float negative = 0;
-//        float polarity;
-//        float mod;
-//        for (int i = 1; i < article.wordList.length; i++) {
-//            if (polarityMap.containsKey(article.wordList[i])) {
-//                polarity = polarityMap.get(article.wordList[i]);
-//                if (modMap.containsKey(article.wordList[i - 1])) mod = modMap.get(article.wordList[i - 1]);
-//                else mod = 1;
-//                if (mod * polarity > 0) positive += mod * polarity;
-//                else if (mod * polarity < 0) negative += mod * polarity;
-//            }
-//        }
-//        return positive + negative;
-//    }
-
     public static double tunedPolarity(Article article) {
         String[] sentences = article.parsedContent.split("\\.");
         boolean bad; double total = 0;
@@ -81,12 +53,10 @@ public class SentimentAnalysis {
             bad = false;
             String[] words = sentence.split(" ");
             for (String word : words) {
-                if (modMap.containsKey(word) &&
-                        (modMap.get(word).equals("badfor") ||
-                            modMap.get(word).equals("reverse"))) bad = true;
+                if (modMap.containsKey(word) && modMap.get(word).equals("reverse")) bad = !bad;
                 if (polarityMap.containsKey(word)) total += bad ? -polarityMap.get(word) : polarityMap.get(word);
             }
         }
-        return total / Math.log(article.wordList.length);
+        return total;
     }
 }

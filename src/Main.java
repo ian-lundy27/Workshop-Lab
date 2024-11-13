@@ -87,11 +87,12 @@ public class Main {
                     System.out.println(richestArticle.name + " has the richest vocabulary among " + curTopic.name + " articles with " + richestArticle.wordFrequencyList.size() + " unique words");
                     break;
                 case 6:
-                    System.out.println("Polarity of " + curArticle.name + ": " + SentimentAnalysis.getArticlePolarity(curArticle));
+                    System.out.printf("Polarity of " + curArticle.name + ": %.2f%n", SentimentAnalysis.tunedPolarity(curArticle) / Math.sqrt(curArticle.wordList.length) * 100);
+                    System.out.printf("Polarity of " + curArticle.name + ", unweighted by article length: %.2f%n", SentimentAnalysis.tunedPolarity(curArticle));
                     break;
                 case 7:
                     curTopic.top20Words(curArticle);
-                    System.out.println("Dumb polarity of " + curArticle.name + ": " + SentimentAnalysis.tunedPolarity(curArticle));
+
             }
             selectOption();
         }
