@@ -25,7 +25,9 @@ Ohtani Gambling.txt: https://www.rollingstone.com/culture/culture-features/shohe
 
 # **Sentiment analysis**
 
-CSV of words and their polarity used is stored under word-sentiments.csv. The list was sourced from https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/ and reduced to a csv of only word and polarity.
+The words used and the values assigned to them used to evaluate the positivity/negativity of articles are stored in lexicon_scores.txt.
+
+The CSV of modifying words used is stored under modifiers.csv. The list was sourced from files from https://mpqa.cs.pitt.edu/lexicons/effect_lexicon/ and reduced to a single file.
 
 # **Overview**
 
