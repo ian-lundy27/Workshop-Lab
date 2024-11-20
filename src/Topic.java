@@ -1,17 +1,20 @@
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.IOException;
 
 public class Topic {
 
     String name;
     ArrayList<Article> articles;
+    String filePath;
 
     public Topic(String path) {
 
+        filePath = path;
         String[] pathArray = path.split("/");
         pathArray = pathArray[pathArray.length - 1].split("\\.");
         this.name = pathArray[0].replaceAll("-"," ");
@@ -48,6 +51,24 @@ public class Topic {
             System.out.println(i + 1 + ".\t" + word + "\t" + article.wordFrequency.get(word));
         }
 
+    }
+
+    public void addFileToDir(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the filepath of the article's text file to add: ");
+        String toMove = sc.nextLine();
+        Path source = Paths.get(toMove);
+        Path target = Paths.get(filePath);
+        try {
+            Files.copy(source, target.resolve(source.getFileName()));
+            //Files.move(source, target.resolve(source.getFileName()));
+            articles.add(new Article(toMove, new File(toMove).getName()));
+            articles.forEach(a -> System.out.println(a.name));
+            System.out.println("File added successfully");
+        } catch (IOException e) {
+            System.out.println("Failed to move file: " + e.getMessage());
+        }
+        sc.close();
     }
 
     public static void newTopic(String name) throws IOException {
