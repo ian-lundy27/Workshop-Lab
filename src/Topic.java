@@ -1,4 +1,8 @@
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Topic {
@@ -44,5 +48,14 @@ public class Topic {
             System.out.println(i + 1 + ".\t" + word + "\t" + article.wordFrequency.get(word));
         }
 
+    }
+
+    public static void newTopic(String name) throws IOException {
+        Path newDirectory = Paths.get("/library/" + name);
+        try {
+            Files.createDirectories(newDirectory);
+        } catch (IOException e) {
+            System.out.println("Failed to create directory: " + e.getMessage());
+        }
     }
 }
