@@ -3,20 +3,23 @@ import java.util.*;
 
 public class Main {
 
-    public static Scanner in = new Scanner(System.in);
-    public static Topic[] allTopics;
-    public static Topic curTopic;
-    public static Article curArticle;
+    public Scanner in = new Scanner(System.in);
+    public Topic[] allTopics;
 
     public static void main(String[] args) {
 
         new SentimentAnalysis();
-        discoverTopics();
-        selectTopic();
+
+        Main main = new Main();
+        main.selectOptions();
 
     }
 
-    public static void discoverTopics() {
+    public Main() {
+        this.allTopics = discoverTopics();
+    }
+
+    public Topic[] discoverTopics() {
         File files = new File("library");
         String[] contents = files.list();
         ArrayList<Topic> topics = new ArrayList<>();
@@ -30,97 +33,72 @@ public class Main {
                     topics.add(new Topic("library/" + subdirs.get(i)));
                 }
             }
-            allTopics = topics.toArray(new Topic[0]);
+            return topics.toArray(new Topic[0]);
         } else {
-            System.out.println("No files found, exiting");
-            System.exit(1);
+            System.out.println("No files found");
+            return new Topic[0];
         }
     }
 
-    public static void selectTopic() {
-        System.out.println("Select a topic:\n0.\tExit");
+    public void selectOptions() {
+        System.out.println("Select an option:\n0.\tExit\n1.\tGet article positivity\n2.\tAdd a topic\n3.\tAdd an article");
+        int selection = getIntInput(0,3);
+        if (selection != 0) {
+            switch (selection) {
+                case 1:
+                    getArticlePositivity();
+                    break;
+                case 2:
+                    addTopic();
+                    break;
+                case 3:
+                    addArticle();
+            }
+            selectOptions();
+        }
+    }
+
+    public void getArticlePositivity() {
+        Topic topic = selectTopic();
+        Article article = selectArticle(topic);
+        System.out.printf("Polarity of " + article.name + ", weighted linearly by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article) / article.wordList.length * 100);
+        System.out.printf("Polarity of " + article.name + ", unweighted by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article));
+    }
+
+    public Topic selectTopic() {
+        System.out.println("Select a topic:");
         for (int i = 0; i < allTopics.length; i++) {
             System.out.println(i + 1 + ".\t" + allTopics[i].name);
         }
-        int selection = getIntInput(0,allTopics.length);
-        if (selection == 0) System.exit(0);
-        else {
-            curTopic = allTopics[selection - 1];
-            selectArticle();
-        }
+        int selection = getIntInput(1,allTopics.length);
+        return allTopics[selection - 1];
     }
 
-    public static void selectArticle() {
-        System.out.println("Select an article:\n0.\tBack");
-        for (int i = 0; i < curTopic.articles.size(); i++) {
-            System.out.println(i + 1 + ".\t" + curTopic.articles.get(i).name);
+    public Article selectArticle(Topic topic) {
+        System.out.println("Select an article:");
+        for (int i = 0; i < topic.articles.size(); i++) {
+            System.out.println(i + 1 + ".\t" + topic.articles.get(i).name);
         }
-        int selection = getIntInput(0,curTopic.articles.size());
-        if (selection == 0) selectTopic();
-        else {
-            curArticle = curTopic.articles.get(selection - 1);
-            selectOption();
-        }
+        int selection = getIntInput(1,topic.articles.size());
+        return topic.articles.get(selection - 1);
     }
 
-    public static void selectOption() {
-        System.out.println("Select a statistic:");
-        System.out.println("0.\tBack\n1.\tWord count\n2.\tNumber of sentences\n3.\tWord frequency (range)\n4.\tWord frequency (single word)\n5.\tRichest vocabulary\n6.\tPolarity\n7. \tTop 20 words");
-        int selection = getIntInput(0,7);
-        if (selection == 0) selectArticle();
-        else {
-            switch (selection) {
-                case 1:
-                    System.out.println("There are " + curArticle.wordList.length + " words in the article");
-                    break;
-                case 2:
-                    System.out.println("There are " + curArticle.statementCount() + " sentences in the article");
-                    break;
-                case 3:
-                    getMultiWordFrequency();
-                    break;
-                case 4:
-                    getSingleWordFrequency();
-                    break;
-                case 5:
-                    Article richestArticle = curTopic.richestText();
-                    System.out.println(richestArticle.name + " has the richest vocabulary among " + curTopic.name + " articles with " + richestArticle.wordFrequencyList.size() + " unique words");
-                    break;
-                case 6:
-//                    System.out.printf("Polarity of " + curArticle.name + ": %.2f%n", SentimentAnalysis.tunedPolarity(curArticle) / Math.sqrt(curArticle.wordList.length) * 100);
-                    System.out.printf("Polarity of " + curArticle.name + ", weighted linearly by word count: %.2f%n", SentimentAnalysis.tunedPolarity(curArticle) / curArticle.wordList.length * 100);
-                    System.out.printf("Polarity of " + curArticle.name + ", unweighted by word count: %.2f%n", SentimentAnalysis.tunedPolarity(curArticle));
-                    break;
-                case 7:
-                    curTopic.top20Words(curArticle);
-
-            }
-            selectOption();
-        }
+    public void addTopic() {
+        System.out.print("Enter topic name: ");
+        String topicName = in.nextLine();
+//      add topic directory
+        discoverTopics();
     }
 
-    public static void getSingleWordFrequency() {
-        System.out.print("Enter word: ");
-        String word = in.nextLine();
-        int frequency = 0;
-        if (curArticle.wordFrequency.containsKey(word)) {
-            frequency = curArticle.wordFrequency.get(word.toLowerCase());
-        }
-        System.out.println("The word '" + word  + "' occurs " + frequency + " times");
-        selectOption();
+    public void addArticle() {
+        Topic topic = selectTopic();
+        System.out.print("Enter path to article text file: ");
+        String path = in.nextLine();
+//      add article file to topic dir
+        discoverTopics();
     }
 
-    public static void getMultiWordFrequency() {
-        System.out.print("There are " + curArticle.wordFrequencyList.size() + " unique words in the article");
-        int range = getIntInput(0,curArticle.wordFrequencyList.size());
-        if (range == 0) return;
-        for (int i = 0; i < range; i++) {
-            String word = curArticle.wordFrequencyList.get(i);
-            System.out.println(i + 1 + ".\t" + word + "\t" + curArticle.wordFrequency.get(word));
-        }
-    }
-
-    public static int getIntInput(int min, int max) {
+    public int getIntInput(int min, int max) {
         while (true) {
             System.out.print("Enter selection: ");
             if (in.hasNextInt()) {
