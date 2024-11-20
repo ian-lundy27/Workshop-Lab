@@ -2,25 +2,29 @@ import java.util.HashMap;
 
 public class SentimentAnalysis {
 
-    static HashMap<String,Float> polarityMap;
-    static HashMap<String,String> modMap;
+    static HashMap<String,Float> polarityMap = instantiatePolarityMap();
+    static HashMap<String,String> modMap = instantiateModMap();
 
-    public SentimentAnalysis() {
+    private static HashMap<String,Float> instantiatePolarityMap() {
         String txt = ReadFiler.filepathToString("library/lexicon_scores.txt");
         String[] partial = txt.split("\n");
-        polarityMap = new HashMap<>();
+        HashMap<String,Float> toReturn = new HashMap<>();
         float polarity;
         for (String values : partial) {
             polarity = SentimentAnalysis.safeParseFloat(values.split("\t")[1]);
-            polarityMap.put(values.split("\t")[0], polarity);
+            toReturn.put(values.split("\t")[0], polarity);
         }
+        return toReturn;
+    }
 
-        txt = ReadFiler.filepathToString("library/modifiers.csv");
-        partial = txt.split("\n");
-        modMap = new HashMap<>();
+    private static HashMap<String,String> instantiateModMap() {
+        String txt = ReadFiler.filepathToString("library/modifiers.csv");
+        String[] partial = txt.split("\n");
+        HashMap<String,String> toReturn = new HashMap<>();
         for (String values : partial) {
-            modMap.put(values.split(",")[0], values.split(",")[1]);
+            toReturn.put(values.split(",")[0], values.split(",")[1]);
         }
+        return toReturn;
     }
 
     public static float safeParseFloat(String s) {

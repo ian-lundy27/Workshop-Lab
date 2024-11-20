@@ -8,8 +8,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        new SentimentAnalysis();
-
         Main main = new Main();
         main.selectOptions();
 
