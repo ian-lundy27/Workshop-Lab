@@ -53,30 +53,21 @@ public class Topic {
 
     }
 
-    public void addFileToDir(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the filepath of the article's text file to add: ");
-        String toMove = sc.nextLine();
-        Path source = Paths.get(toMove);
-        Path target = Paths.get(filePath);
+    public boolean addFileToDir(String path){
+        Path source = Paths.get(path);
+        Path target = Paths.get(this.filePath);
         try {
             Files.copy(source, target.resolve(source.getFileName()));
-            //Files.move(source, target.resolve(source.getFileName()));
-            articles.add(new Article(toMove, new File(toMove).getName()));
-            articles.forEach(a -> System.out.println(a.name));
             System.out.println("File added successfully");
+            return true;
         } catch (IOException e) {
             System.out.println("Failed to move file: " + e.getMessage());
+            return false;
         }
-        sc.close();
     }
 
     public static void newTopic(String name) throws IOException {
-        Path newDirectory = Paths.get("/library/" + name);
-        try {
-            Files.createDirectories(newDirectory);
-        } catch (IOException e) {
-            System.out.println("Failed to create directory: " + e.getMessage());
-        }
+        Path newDirectory = Paths.get(System.getProperty("user.dir") + "/library/" + name);
+        Files.createDirectories(newDirectory);
     }
 }

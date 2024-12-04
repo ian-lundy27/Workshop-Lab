@@ -14,10 +14,10 @@ public class Main {
     }
 
     public Main() {
-        this.allTopics = discoverTopics();
+        discoverTopics();
     }
 
-    public Topic[] discoverTopics() {
+    public void discoverTopics() {
         File files = new File("library");
         String[] contents = files.list();
         ArrayList<Topic> topics = new ArrayList<>();
@@ -31,10 +31,10 @@ public class Main {
                     topics.add(new Topic("library/" + subdirs.get(i)));
                 }
             }
-            return topics.toArray(new Topic[0]);
+            this.allTopics =  topics.toArray(new Topic[0]);
         } else {
             System.out.println("No files found");
-            return new Topic[0];
+            this.allTopics = new Topic[0];
         }
     }
 
@@ -59,8 +59,10 @@ public class Main {
     public void getArticlePositivity() {
         Topic topic = selectTopic();
         Article article = selectArticle(topic);
-        System.out.printf("Polarity of " + article.name + ", weighted linearly by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article) / article.wordList.length * 100);
-        System.out.printf("Polarity of " + article.name + ", unweighted by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article));
+        if (article != null) {
+            System.out.printf("Polarity of " + article.name + ", weighted linearly by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article) / article.wordList.length * 100);
+            System.out.printf("Polarity of " + article.name + ", unweighted by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article));
+        }
     }
 
     public Topic selectTopic() {
@@ -74,25 +76,34 @@ public class Main {
 
     public Article selectArticle(Topic topic) {
         System.out.println("Select an article:");
-        for (int i = 0; i < topic.articles.size(); i++) {
-            System.out.println(i + 1 + ".\t" + topic.articles.get(i).name);
+        if (!topic.articles.isEmpty()) {
+            for (int i = 0; i < topic.articles.size(); i++) {
+                System.out.println(i + 1 + ".\t" + topic.articles.get(i).name);
+            }
+            int selection = getIntInput(1, topic.articles.size());
+            return topic.articles.get(selection - 1);
         }
-        int selection = getIntInput(1,topic.articles.size());
-        return topic.articles.get(selection - 1);
+        System.out.println("No articles found under topic '" + topic.name + "'");
+        return null;
     }
 
     public void addTopic() {
         System.out.print("Enter topic name: ");
         String topicName = in.nextLine();
-//      add topic directory
-        discoverTopics();
+        try {
+            Topic.newTopic(topicName);
+            System.out.println("Successfully created directory: " + topicName);
+            discoverTopics();
+        } catch (Exception e) {
+            System.out.println("Failed to create directory: " + e.getMessage());
+        }
     }
 
     public void addArticle() {
         Topic topic = selectTopic();
         System.out.print("Enter path to article text file: ");
         String path = in.nextLine();
-//      add article file to topic dir
+        topic.addFileToDir(path);
         discoverTopics();
     }
 
