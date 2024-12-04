@@ -3,7 +3,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.io.IOException;
 
 public class Topic {
@@ -32,16 +31,18 @@ public class Topic {
         }
     }
 
-    public boolean addFileToDir(String path){
+    public void addFileToDir(String path){
+        //  stupid logic to remove " at start and end of string, because copied filepath on windows adds ""
+        while (path.charAt(0) == '"') path = path.substring(1);
+        while (path.charAt(path.length() - 1) == '"') path = path.substring(0, path.length() - 1);
+
         Path source = Paths.get(path);
         Path target = Paths.get(this.filePath);
         try {
             Files.copy(source, target.resolve(source.getFileName()));
             System.out.println("File added successfully");
-            return true;
         } catch (IOException e) {
             System.out.println("Failed to move file: " + e.getMessage());
-            return false;
         }
     }
 
