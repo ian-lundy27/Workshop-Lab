@@ -29,6 +29,10 @@ The words used and the values assigned to them used to evaluate the positivity/n
 
 The CSV of modifying words used is stored under modifiers.csv. The list was sourced from files from https://mpqa.cs.pitt.edu/lexicons/effect_lexicon/ and reduced to a single file.
 
+This project parses the article sentence by sentence to analyze the attitude of the article. It attempts to keep track of whether the sentence has a positive or negative attitude towards a given word: for instance, if the sentence is negative towards a negative word, the word is treated as positive. The sum of these weighted scores is divided by the number of words of the article, giving the final averaged score.
+
+Sentence attitude towards any given word is tracked with a boolean that is flipped upon encountering any modifying word that would reverse the meaning of the sentence.
+
 # **Overview**
 
 This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are also two other topics under the library folder. There are five total classes, Topic, Article, SentimentAnalysis, ReadFiler, and Main.
@@ -60,6 +64,6 @@ The SentimentAnalysis class is designed to take in a given Article, and from the
 This class is designed to take in a file, and uses a buffered reader to convert all the text in the file into a String. *filepathToString* converts the file path into a File variable type, and from there *fileToString* reads the File to retrieve a String of all the text.
 
 ### Main
-Makes instances of the topic class for each of the three topics, and creates a basic user interface to interact and fetch information from the articles. Also provides an interface to add new topics, as well as new articles.
+Makes instances of the topic class for each of topics in the /library directory, and creates a basic user interface to interact and fetch information from the articles. Also provides an interface to add new topics, as well as new articles. Rediscovers the contents of /library after adding a new topic/article to keep the runtime of the application up to date. 
 
 ### Future Refactoring
