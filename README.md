@@ -39,25 +39,19 @@ This project is designed to read the text of articles, and to gather multiple pi
 
 The topic class takes a file directory and extracts all the files inside into a linked list. From there it makes an Article object with each of the files in that list. It also has methods to analyze the Articles:
 
-*richestText* Compares all the Articles in the Topic, and return the one with the most diverse vocabulary.
+*addFileToDir* Adds a new text file to a chosen directory
 
-*top20Words* Returns the 20 most frequent words in the inputted Article.
+*newTopic* Creates a new topic folder in the library
 
 ### Article
 
-The Article class makes the article into a string file, where other methods parse and analyze the content, such as retrieving the number of words, statements, individual words, and removing stop words.
+The Article class makes the article into a string file, where other methods parse.
 
 *parseContent*: Skims through the article and removes all characters except for letters and numbers, this makes a list of all words in the file without anything else. Removal exceptions for words like x-ray and U.S.A, so that they keep their hyphens and periods respectively.
 
-*buildWordList*: Breaks the parsed string apart into a array consisting of every word.
-
-*findWordFrequency*: Builds a hash map to keep count of how many times each word in the article appears.
-
-*sortFrequencyList*: Builds a linked list with all the words sorted by number of appearances. Words that appear the same amount of times are sorted alphabetically.
+*buildWordList*: Breaks the parsed string apart into an array consisting of every word.
 
 *removeStopWords*: Makes an array list of all words, excluding the stop words listed in the "stopwords.txt" file.
-
-*statementCount*: Count periods, question marks, and exclamation marks to return the number of sentences.
 
 ### SentimentAnalysis (Class)
 The SentimentAnalysis class is designed to take in a given Article, and from there analyze the sentiment of the text in the Article to determine if it has a positive or negative tone.
@@ -66,4 +60,6 @@ The SentimentAnalysis class is designed to take in a given Article, and from the
 This class is designed to take in a file, and uses a buffered reader to convert all the text in the file into a String. *filepathToString* converts the file path into a File variable type, and from there *fileToString* reads the File to retrieve a String of all the text.
 
 ### Main
-Makes instances of the topic class for each of the three topics, and creates a basic user interface to interact and fetch information from the articles.
+Makes instances of the topic class for each of the three topics, and creates a basic user interface to interact and fetch information from the articles. Also provides an interface to add new topics, as well as new articles.
+
+### Future Refactoring
