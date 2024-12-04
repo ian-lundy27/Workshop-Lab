@@ -6,8 +6,6 @@ public class Article {
     String rawContent;
     String parsedContent;
     String[] wordList;
-    HashMap<String,Integer> wordFrequency;
-    LinkedList<String> wordFrequencyList;
 
     public Article (String filePath, String name) {
 
@@ -23,8 +21,6 @@ public class Article {
             //  Initialize object fields
             parseContent();
             buildWordList();
-            findWordFrequency();
-            sortFrequencyList();
         } catch (Exception e) {
             System.out.println("Failed to initialize article '" + name + "': " + e.getMessage());
         }
@@ -66,43 +62,6 @@ public class Article {
         if (!this.name.equals("stopwords")) {
             this.wordList = this.removeStopWords().toArray(new String[0]);
         }
-    }
-
-    public void findWordFrequency() {
-
-        //  Initialize frequency key/value map
-        this.wordFrequency = new HashMap<>();
-
-        //  Add occurrences of each word to map
-        for (String word : this.wordList) {
-
-            if (!wordFrequency.containsKey(word)) {
-
-                wordFrequency.put(word, 1);
-
-            } else {
-
-                wordFrequency.put(word, wordFrequency.get(word) + 1);
-
-            }
-
-        }
-
-    }
-
-    public void sortFrequencyList() {
-
-        //  Creates linked list of all keys/words in the frequency map
-        this.wordFrequencyList = new LinkedList<>(this.wordFrequency.keySet());
-
-        //  Sorts list based on word frequency
-        //  If two words have same frequency, sorts alphabetically
-        this.wordFrequencyList.sort((k1, k2) ->
-                this.wordFrequency.get(k2).compareTo(this.wordFrequency.get(k1)) == 0
-                ? k1.compareTo(k2)
-                : this.wordFrequency.get(k2).compareTo(this.wordFrequency.get(k1))
-        );
-
     }
 
     public ArrayList<String> removeStopWords() {
