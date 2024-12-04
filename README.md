@@ -67,3 +67,4 @@ This class is designed to take in a file, and uses a buffered reader to convert 
 Makes instances of the topic class for each of topics in the /library directory, and creates a basic user interface to interact and fetch information from the articles. Also provides an interface to add new topics, as well as new articles. Rediscovers the contents of /library after adding a new topic/article to keep the runtime of the application up to date. 
 
 ### Future Refactoring
+*Change rediscovering of new topics/articles so that only new objects are discovered and not everything*
