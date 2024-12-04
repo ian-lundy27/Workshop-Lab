@@ -32,27 +32,6 @@ public class Topic {
         }
     }
 
-    public Article richestText(){
-        double richestWordCount = 0;
-        Article richestArticle = null;
-        for (Article article : articles) {
-            if ((double)article.wordFrequencyList.size()/article.wordList.length > richestWordCount){
-                richestArticle = article;
-                richestWordCount = article.wordFrequencyList.size();
-            }
-        }
-        return richestArticle;
-    }
-
-    public void top20Words(Article article){
-        System.out.println("The top 20 non-stop words in this article are:");
-        for (int i = 0; i < 20; i++) {
-            String word = article.wordFrequencyList.get(i);
-            System.out.println(i + 1 + ".\t" + word + "\t" + article.wordFrequency.get(word));
-        }
-
-    }
-
     public boolean addFileToDir(String path){
         Path source = Paths.get(path);
         Path target = Paths.get(this.filePath);
