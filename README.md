@@ -1,5 +1,3 @@
-"# Workshop-Lab" 
-
 # **Authors**
 Michael Considine, Ian Lundy, Michael Connors at Fairfield University
 
@@ -51,12 +49,9 @@ On the subject of restructuring the main methods, we would prefer to have anothe
 *Change rediscovering of new topics/articles so that only new objects are discovered and not everything*
 Whenever a topic is added or an article is added, the new topic/article is discovered (i.e. added to the appropriate list of objects) by running the startup discovery process again. This means the program has to rediscover every topic and article instead of just the one that was added. This is unlikely to cause slowdowns (unless used with an extremely large library) but it is still inefficient, and we would like to improve it.
 
-### In use
+### Screenshots of use
 
-![Fetching the positivity of an article](positivity.png)
-![Adding a new, empty topic to the library](topic.png)
-![Adding a new article to the specified topic](article.png)
-
+Due to the resolution and size of the screenshots, they have been moved to the bottom.
 
 ### Topic
 
@@ -84,3 +79,11 @@ This class is designed to take in a file, and uses a buffered reader to convert 
 
 ### Main
 Makes instances of the topic class for each of topics in the /library directory, and creates a basic user interface to interact and fetch information from the articles. Also provides an interface to add new topics, as well as new articles. Rediscovers the contents of /library after adding a new topic/article to keep the runtime of the application up to date.
+
+### Screenshots (part 2)
+
+![Fetching the positivity of an article](positivity.png)
+
+![Adding a new, empty topic to the library](topic.png)
+
+![Adding a new article to the specified topic](article.png)
