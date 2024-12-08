@@ -60,8 +60,7 @@ public class Main {
         Topic topic = selectTopic();
         Article article = selectArticle(topic);
         if (article != null) {
-            System.out.printf("Polarity of " + article.name + ", weighted linearly by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article) / article.wordList.length * 100);
-            System.out.printf("Polarity of " + article.name + ", unweighted by word count: %.2f%n", SentimentAnalysis.tunedPolarity(article));
+            System.out.printf("Polarity of " + article.name + ": %.2f%n", SentimentAnalysis.tunedPolarity(article) / article.wordList.length * 100);
         }
     }
 
