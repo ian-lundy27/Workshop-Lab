@@ -37,6 +37,8 @@ Sentence attitude towards any given word is tracked with a boolean that is flipp
 
 This project is designed to read the text of articles, and to gather multiple pieces of data, such as the word count, appearances of each word, list of all words, and list of all words without stop words (and, or, etc). Three articles are attached under library -> nuclear-power. There are also two other topics under the library folder. There are five total classes, Topic, Article, SentimentAnalysis, ReadFiler, and Main.
 
+*Note:* An absolute file path must be given to any file being added for analysis
+
 ![alt_text](UML%20Diagram.png)
 
 ### Topic
@@ -67,4 +69,11 @@ This class is designed to take in a file, and uses a buffered reader to convert 
 Makes instances of the topic class for each of topics in the /library directory, and creates a basic user interface to interact and fetch information from the articles. Also provides an interface to add new topics, as well as new articles. Rediscovers the contents of /library after adding a new topic/article to keep the runtime of the application up to date. 
 
 ### Future Refactoring
+*Restructure main class menu methods*
+As it is, the UI is just a series of methods that call one another depending on the input. We would prefer this to be something more modular and automatic so that the addition or removal of further methods is simpler. This could be accomplished by creating new classes to support the creation of option objects or by using some third-party library.
+
+*New class representing the library directory*
+On the subject of restructuring the main methods, we would prefer to have another class representing the contents of the library. This would allow the collection of topics, as well as methods related not only to every topic but also every article, to be located inside this new class. Some of the main methods would fit better in this new class, and it would simplify the code involved in keeping track of the user's/UI state in the main method.
+
 *Change rediscovering of new topics/articles so that only new objects are discovered and not everything*
+Whenever a topic is added or an article is added, the new topic/article is discovered (i.e. added to the appropriate list of objects) by running the startup discovery process again. This means the program has to rediscover every topic and article instead of just the one that was added. This is unlikely to cause slowdowns (unless used with an extremely large library) but it is still inefficient, and we would like to improve it.
